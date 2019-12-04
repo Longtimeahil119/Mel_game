@@ -16,6 +16,8 @@ public class Inventory : MonoBehaviour
 
     PlayerMovement player;
 
+    Texture temp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +53,11 @@ public class Inventory : MonoBehaviour
             }
         }
 
+        if(animationTimer < 1)
+        {
+            animationTimer += Time.deltaTime;
+        }
+
         if(showInventory)
         {
             windowAnimation = Mathf.Lerp(windowAnimation, 0, animationTimer);
@@ -67,6 +74,32 @@ public class Inventory : MonoBehaviour
     private void OnGUI()
     {
         GUI.Label(new Rect(5, 5, 200, 50), "Press 'Tab' to open Inventory");
+
+        if(windowAnimation < 1)
+        {
+            GUILayout.BeginArea(new Rect(10 - (430 * windowAnimation), Screen.height / 2 - 200, 302, 430), GUI.skin.GetStyle("box"));
+
+            GUILayout.Label("Inventory", GUILayout.Height(25));
+
+            GUILayout.BeginVertical();
+            for(int i = 0; i < invSlots.Length; i+=3)
+            {
+                GUILayout.BeginHorizontal();
+
+                for(int a = 0; a < 3; a++)
+                {
+                    if(invSlots[i + a] > -1)
+                    {
+                        GUILayout.Box(temp, GUILayout.Width(95));
+                    }
+                }
+                GUILayout.EndHorizontal();
+            }
+
+            GUILayout.EndVertical();
+
+        }
+
     }
 
     public bool GetShow()
