@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerMovement : MonoBehaviour
 {
     //Varables
@@ -12,10 +13,16 @@ public class PlayerMovement : MonoBehaviour
     public float RotationSpeed = 2f;
     public float jumpForce = 4f;
     public GameObject eyes;
+    public bool canMove;
+
+    public static PlayerMovement playerMovement;
 
     CharacterController Player;
+    Inventory inv;
 
-    private bool hasJumped, isSprinting, isCrouched;
+    private bool hasJumped;
+    private bool isSprinting;
+    private bool isCrouched;
 
     float moveFB;
     float moveLR;
@@ -29,35 +36,41 @@ public class PlayerMovement : MonoBehaviour
     {
         Speed = WalkSpeed;
         Player = GetComponent<CharacterController>();
+        canMove = true;
+        playerMovement = this;
     }
 
     void Update()
     {
         //look movement
-        moveFB = Input.GetAxis("Vertical") * Speed;
-        moveLR = Input.GetAxis("Horizontal") * Speed;
 
-        rotX = Input.GetAxis("Mouse X") * RotationSpeed;
-        rotY -= Input.GetAxis("Mouse Y") * RotationSpeed;
+        if(canMove)
+        {
+            moveFB = Input.GetAxis("Vertical") * Speed;
+            moveLR = Input.GetAxis("Horizontal") * Speed;
 
-        rotY = Mathf.Clamp(rotY, -60f, 60f);
+            rotX = Input.GetAxis("Mouse X") * RotationSpeed;
+            rotY -= Input.GetAxis("Mouse Y") * RotationSpeed;
 
-        Vector3 movement = new Vector3(moveLR, vertVelocity, moveFB);
-        transform.Rotate(0, rotX, 0);
+            rotY = Mathf.Clamp(rotY, -60f, 60f);
 
-        eyes.transform.localRotation = Quaternion.Euler(rotY, 0, 0);
+            Vector3 movement = new Vector3(moveLR, vertVelocity, moveFB);
+            transform.Rotate(0, rotX, 0);
 
-        movement = transform.rotation * movement;
-        Player.Move(movement * Time.deltaTime);
+            eyes.transform.localRotation = Quaternion.Euler(rotY, 0, 0);
+
+            movement = transform.rotation * movement;
+            Player.Move(movement * Time.deltaTime);
+        }
 
         //Jumping
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && canMove)
         {
             hasJumped = true;
         }
 
         //Sprinting
-        if (Input.GetButtonDown("Sprint"))
+        if (Input.GetButtonDown("Sprint") && canMove)
         {
             if (isSprinting == false)
             {
@@ -72,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Crouching
-        if (Input.GetButtonDown("Crouch"))
+        if (Input.GetButtonDown("Crouch") && canMove)
         {
             if (isCrouched == false)
             {
@@ -97,10 +110,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Player.isGrounded == true)
         {
-            if (hasJumped == false)
+            if (!hasJumped)
             {
                 vertVelocity = Physics.gravity.y;
-
             }
             else
             {
@@ -115,4 +127,5 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+
 }

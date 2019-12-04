@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -882,7 +882,7 @@ PrefabInstance:
     - target: {fileID: 6604862333619714151, guid: 4ecf299a107f7654aaebcbc25fb97b48,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.515
+      value: -0.422
       objectReference: {fileID: 0}
     - target: {fileID: 6604862333619714151, guid: 4ecf299a107f7654aaebcbc25fb97b48,
         type: 3}
@@ -940,6 +940,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2379829527198922870, guid: 54c6266777911ed44a82ee3ae9ab7022,
         type: 3}
+    - target: {fileID: 3665385919087585754, guid: 4ecf299a107f7654aaebcbc25fb97b48,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.241
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ecf299a107f7654aaebcbc25fb97b48, type: 3}
 --- !u!1 &566061487
@@ -3745,6 +3750,11 @@ PrefabInstance:
       propertyPath: m_ClearFlags
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5763390367384797297, guid: b92068489e2c8cc4c90cb2595793dc55,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.803
+      objectReference: {fileID: 0}
     - target: {fileID: 4890049220526190085, guid: b92068489e2c8cc4c90cb2595793dc55,
         type: 3}
       propertyPath: m_RootOrder
@@ -3869,11 +3879,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5763390367384797297, guid: b92068489e2c8cc4c90cb2595793dc55,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.803
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b92068489e2c8cc4c90cb2595793dc55, type: 3}
