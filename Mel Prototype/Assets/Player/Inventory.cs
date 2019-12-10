@@ -15,7 +15,7 @@ public class Inventory : MonoBehaviour
     Vector2 dragOffset = Vector2.zero;
 
     PlayerMovement player;
-
+    public GameObject panel;
     Texture temp;
 
     // Start is called before the first frame update
@@ -23,6 +23,7 @@ public class Inventory : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        //panel.gameObject.SetActive(false);
 
         for (int i = 0; i < invSlots.Length; i++)
         {
@@ -51,6 +52,9 @@ public class Inventory : MonoBehaviour
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
             }
+
+            //showHidePanel();
+
         }
 
         if(animationTimer <= 1)
@@ -60,50 +64,23 @@ public class Inventory : MonoBehaviour
 
         if(showInventory)
         {
-            windowAnimation = Mathf.Lerp(windowAnimation, 1f, animationTimer);
+            //windowAnimation = Mathf.Lerp(windowAnimation, 1f, animationTimer);
             PlayerMovement.playerMovement.canMove = false;
         }
         else
         {
-            windowAnimation = Mathf.Lerp(windowAnimation, 0.0f, animationTimer);
+            //windowAnimation = Mathf.Lerp(windowAnimation, 0.0f, animationTimer);
             PlayerMovement.playerMovement.canMove = true;
         }
 
     }
 
-    private void OnGUI()
+    public void showHidePanel()
     {
-        GUI.Label(new Rect(5, 5, 200, 50), "Press 'Tab' to open Inventory");
-
-        Debug.Log(windowAnimation);
-
-        // showInventory causes it to disappear before animation finishes
-        // find a way to fix it so the small black box doesn't show or
-        // find a way to let the animation finish etc etc
-        if(windowAnimation <= 1 && showInventory)
-        {
-            GUILayout.BeginArea(new Rect(430 , Screen.height / 6, (430 * windowAnimation),(430 * windowAnimation)), GUI.skin.GetStyle("box"));
-
-            GUILayout.Label("Inventory", GUILayout.Height(25));
-
-            GUILayout.BeginVertical();
-            for(int i = 0; i < invSlots.Length; i+=3)
-            {
-                GUILayout.BeginHorizontal();
-
-                for(int a = 0; a < 3; a++)
-                {
-                    if(invSlots[i + a] > -1)
-                    {
-                        //GUILayout.Box(temp, GUILayout.Width(95));
-                    }
-                }
-                GUILayout.EndHorizontal();
-            }
-
-            GUILayout.EndVertical();
-            GUILayout.EndArea();
-        }
+        if (showInventory)
+            panel.gameObject.SetActive(false);
+        else
+            panel.gameObject.SetActive(true);
     }
 
 }
