@@ -9,11 +9,21 @@ public class Gun : MonoBehaviour {
     public float fireRate = 5f;
     public float impactForce = 30f;
 
+    public bool canFire;
+
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactEffect;
 
     private float nextTimeToFire = 0f;
+
+    public static Gun gun;
+
+    private void Start()
+    {
+        canFire = true;
+        gun = this;
+    }
 
     void Update()
     {
@@ -26,26 +36,29 @@ public class Gun : MonoBehaviour {
 
     void Shoot ()
     {
-        muzzleFlash.Play();
-
-        RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+        if(canFire)
         {
-            Debug.Log(hit.transform.name);
+                muzzleFlash.Play();
 
-            Target target = hit.transform.GetComponent<Target>();
-            if (target != null)
-            {
-                target.TakeDamage(damage);
-            }
+                RaycastHit hit;
+                if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+                {
+                    Debug.Log(hit.transform.name);
 
-            if (hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
+                    Target target = hit.transform.GetComponent<Target>();
+                    if (target != null)
+                    {
+                        target.TakeDamage(damage);
+                    }
 
-            GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(impactGO, 2f);
+                    if (hit.rigidbody != null)
+                    {
+                        hit.rigidbody.AddForce(-hit.normal * impactForce);
+                    }
+
+                    GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                    Destroy(impactGO, 2f);
+                }
         }
     }
 }

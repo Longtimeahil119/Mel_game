@@ -355,7 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09db4956a67244d9ab97c59adb8a1002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 28461449}
+  showInventory: 0
+  panel: {fileID: 2100011969}
 --- !u!114 &28461452
 MonoBehaviour:
   m_ObjectHideFlags: 0

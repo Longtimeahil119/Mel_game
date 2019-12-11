@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 494}
   m_MaxSize: {x: 18008, y: 14044}
   vertical: 1
-  controlID: 3080
+  controlID: 2893
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 494}
   m_MaxSize: {x: 18008, y: 14044}
   vertical: 0
-  controlID: 3081
+  controlID: 2894
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 494}
   m_MaxSize: {x: 14006, y: 14044}
   vertical: 1
-  controlID: 3082
+  controlID: 2847
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,9 +219,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -53.315407, y: -27.737278, z: -66.459885}
+    m_Target: {x: -60.9883, y: -40.41421, z: -48.26554}
     speed: 2
-    m_Value: {x: -53.315407, y: -27.737278, z: -66.459885}
+    m_Value: {x: -60.9883, y: -40.41421, z: -48.26554}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -250,9 +250,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.07876621, y: 0.9266823, z: -0.2017235, w: -0.31088507}
+    m_Target: {x: -0.15124075, y: 0.848389, z: -0.27293983, w: -0.43029928}
     speed: 2
-    m_Value: {x: -0.07867632, y: 0.9256248, z: -0.2014933, w: -0.3105303}
+    m_Value: {x: -0.15106778, y: 0.8474187, z: -0.27262768, w: -0.42980716}
   m_Size:
     m_Target: 74.3802
     speed: 2
@@ -375,7 +375,7 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 272}
   m_MaxSize: {x: 14006, y: 10022}
   vertical: 0
-  controlID: 3083
+  controlID: 2848
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -441,20 +441,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Player
+    - Assets/Items/Gun
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Player
+  - Assets/Items/Gun
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Test Account\Documents\GitHub\Mel_game\Mel Prototype
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 502f0000
-    m_LastClickedID: 12112
-    m_ExpandedIDs: 00000000b02c000000ca9a3b
+    m_SelectedIDs: dc2d0000
+    m_LastClickedID: 11740
+    m_ExpandedIDs: 00000000b02c0000282e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -507,8 +507,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: aef6ffff
-    m_LastClickedInstanceID: -2386
+    m_SelectedInstanceIDs: 5a300000
+    m_LastClickedInstanceID: 12378
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300000632000000000000
     m_RenameOverlay:
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 294}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 3075
+  controlID: 2895
 --- !u!114 &14
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -647,7 +647,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 9aeafffff0ebffffb8f3ffffaef6ffff6efbffff48300000
+      m_ExpandedIDs: 00fbffff6efbffff083000005a30000082310000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -720,8 +720,8 @@ MonoBehaviour:
     y: 505
     width: 632
     height: 482
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 18}
@@ -790,5 +790,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: -2386
+  m_LastInspectedObjectInstanceID: 12378
   m_LastVerticalScrollValue: 0

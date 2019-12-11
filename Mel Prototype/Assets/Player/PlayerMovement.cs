@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement playerMovement;
 
     CharacterController Player;
-    Inventory inv;
 
     private bool hasJumped;
     private bool isSprinting;

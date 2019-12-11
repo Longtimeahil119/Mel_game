@@ -7,14 +7,13 @@ public class Inventory : MonoBehaviour
 
     // Available slots
     int[] invSlots = new int[12];
-    bool showInventory = false;
+    public bool showInventory = false;
     float windowAnimation = -1;
     float animationTimer = 0;
 
     int itemIndexToDrag = -1;
     Vector2 dragOffset = Vector2.zero;
 
-    PlayerMovement player;
     public GameObject panel;
     Texture temp;
 
@@ -23,7 +22,8 @@ public class Inventory : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        //panel.gameObject.SetActive(false);
+        panel.gameObject.SetActive(false);
+        showInventory = false;
 
         for (int i = 0; i < invSlots.Length; i++)
         {
@@ -53,7 +53,7 @@ public class Inventory : MonoBehaviour
                 Cursor.lockState = CursorLockMode.Locked;
             }
 
-            //showHidePanel();
+            showHidePanel();
 
         }
 
@@ -66,11 +66,13 @@ public class Inventory : MonoBehaviour
         {
             //windowAnimation = Mathf.Lerp(windowAnimation, 1f, animationTimer);
             PlayerMovement.playerMovement.canMove = false;
+            Gun.gun.canFire = false;
         }
         else
         {
             //windowAnimation = Mathf.Lerp(windowAnimation, 0.0f, animationTimer);
             PlayerMovement.playerMovement.canMove = true;
+            Gun.gun.canFire = true;
         }
 
     }
@@ -78,9 +80,9 @@ public class Inventory : MonoBehaviour
     public void showHidePanel()
     {
         if (showInventory)
-            panel.gameObject.SetActive(false);
-        else
             panel.gameObject.SetActive(true);
+        else
+            panel.gameObject.SetActive(false);
     }
 
 }
