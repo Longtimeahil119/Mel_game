@@ -12,6 +12,8 @@ public class Interact : MonoBehaviour
 
     public Image interactIcon;
 
+    public GameObject panel;
+
     public bool isInteracting;
 
     void Start()
@@ -35,7 +37,8 @@ public class Interact : MonoBehaviour
                 //{
                 //    interactIcon.enabled = true;
                 //}
-                
+
+                panel.SetActive(true);
 
                 if(Input.GetButtonDown(interactButton))
                 {
@@ -47,6 +50,10 @@ public class Interact : MonoBehaviour
                 }
             }
 
+        }
+        else
+        {
+            panel.SetActive(false);
         }
     }
 }

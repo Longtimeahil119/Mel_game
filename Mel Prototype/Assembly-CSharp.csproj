@@ -62,13 +62,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Bosses\Turtle\Scripts\RawrScript.cs" />
+    <Compile Include="Assets\HeldItem.cs" />
     <Compile Include="Assets\Items\Door\DoorOpen.cs" />
     <Compile Include="Assets\Items\Gun\Gun.cs" />
     <Compile Include="Assets\NPC\Zombies\ZombieMovement.cs" />
+    <Compile Include="Assets\Player\ActionBar.cs" />
     <Compile Include="Assets\Player\Interact.cs" />
     <Compile Include="Assets\Player\Inventory.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />
     <Compile Include="Assets\Target.cs" />
+    <Compile Include="Assets\UI\DragDrop.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Test Account/Documents/GitHub/Mel_game/Mel Prototype/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

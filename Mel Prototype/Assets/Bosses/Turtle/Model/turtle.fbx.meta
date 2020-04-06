@@ -1,0 +1,182 @@
+fileFormatVersion: 2
+guid: 475162e9622002c4b9841e4edad64ba4
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable:
+  - first:
+      74: -4784455347782509042
+    second: turtle|ArmatureAction
+  - first:
+      74: -5077247655510483790
+    second: turtle|ArmatureAction.001
+  - first:
+      74: 7255170892841360129
+    second: turtle|ArmatureAction.002
+  - first:
+      74: 7935732803805277458
+    second: turtle|ArmatureAction.003
+  - first:
+      74: 5295278776697858102
+    second: turtle|ArmatureAction.004
+  - first:
+      74: 1344889166250968721
+    second: turtle|KeyAction
+  - first:
+      74: 5886503046701560490
+    second: turtle|KeyAction.001
+  - first:
+      74: -5015734019721191896
+    second: turtle|KeyAction.002
+  - first:
+      74: -7038875144524644753
+    second: turtle|LightAction
+  - first:
+      74: -2826095004400025042
+    second: turtle|turtleAction
+  - first:
+      74: 8247885534911223437
+    second: turtle|turtleAction.001
+  - first:
+      74: 8228115556641567129
+    second: turtle|turtleAction.002
+  - first:
+      74: 7762407357636244486
+    second: turtle|turtleAction.003
+  - first:
+      74: -3065870525927183366
+    second: turtle|turtleAction.004
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
+  - first:
+      74: -1422011007694221501
+    second: Armature|ArmatureAction.001
+  - first:
+      74: 6093225430303232669
+    second: Armature|ArmatureAction.002
+  - first:
+      74: 4419341551624498096
+    second: Armature|ArmatureAction.003
+  - first:
+      74: 6221187890141279125
+    second: Armature|ArmatureAction.004
+  - first:
+      74: -885483897695478210
+    second: Armature|ArmatureAction.005
+  - first:
+      74: -2799005786086568110
+    second: Armature|KeyAction
+  - first:
+      74: -67163264898438096
+    second: Armature|KeyAction.001
+  - first:
+      74: -5616816293522115965
+    second: Armature|KeyAction.002
+  - first:
+      74: -1900132722527647994
+    second: Armature|LightAction
+  - first:
+      74: -3309666873516784604
+    second: Armature|turtleAction
+  - first:
+      74: -2427308546079284017
+    second: Armature|turtleAction.001
+  - first:
+      74: 216872770764208664
+    second: Armature|turtleAction.002
+  - first:
+      74: 1250175742566775894
+    second: Armature|turtleAction.003
+  - first:
+      74: -6041820512941979605
+    second: Armature|turtleAction.004
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
