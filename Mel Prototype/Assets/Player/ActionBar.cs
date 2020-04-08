@@ -17,7 +17,7 @@ public class ActionBar : MonoBehaviour
     public static Dictionary<string, GameObject[]> arrays;
 
     public static int slotSelected;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -49,7 +49,7 @@ public class ActionBar : MonoBehaviour
             else
             {
                 barIcons[i - (Inventory.invSlots.Length - 5)].SetActive(true);
-                barIcons[i - (Inventory.invSlots.Length - 5)].GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Items/"+Inventory.invSlots[i].ToString());
+                barIcons[i - (Inventory.invSlots.Length - 5)].GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Item Icons/"+Inventory.invSlots[i].ToString());
             }
         }
 
@@ -86,5 +86,7 @@ public class ActionBar : MonoBehaviour
             slotSelected = 5;
         }
     }
+
+    
 
 }

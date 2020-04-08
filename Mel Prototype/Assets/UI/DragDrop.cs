@@ -49,7 +49,8 @@ public class DragDrop : EventTrigger
         {
             Inventory.invSlots[collidedWith] = Inventory.invSlots[grandParentSlot];
             Inventory.invSlots[grandParentSlot] = "";
-
+            Inventory.invStacks[collidedWith] = Inventory.invStacks[grandParentSlot];
+            Inventory.invStacks[grandParentSlot] = 0;
         }
 
         dragging = false;

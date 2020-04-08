@@ -33,10 +33,6 @@ public class Interact : MonoBehaviour
         {
             if(isInteracting == false)
             {
-                //if(isInteracting == true)
-                //{
-                //    interactIcon.enabled = true;
-                //}
 
                 panel.SetActive(true);
 
@@ -46,10 +42,13 @@ public class Interact : MonoBehaviour
                     {
                         hit.collider.GetComponent<DoorOpen>().ChangeDoorState();
                     }
-
+                    if(hit.collider.CompareTag("Cube"))
+                    {
+                        HeldItem.pickUpItem(hit.collider.gameObject.name, hit.collider.gameObject);
+                        
+                    }
                 }
             }
-
         }
         else
         {

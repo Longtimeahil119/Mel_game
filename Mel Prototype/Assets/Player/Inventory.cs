@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour
 
     // Available slots
     public static string[] invSlots = new string[15];
+    public static int[] invStacks = new int[15]; 
     public bool showInventory = false;
     float windowAnimation = -1;
     float animationTimer = 0;
@@ -31,11 +32,15 @@ public class Inventory : MonoBehaviour
         for(int i = 0; i < invSlots.Length; i++)
         {
             invSlots[i] = "";
+            invStacks[i] = 0;
         }
 
         invSlots[0] = "Cube";
+        invStacks[0] = 1;
         invSlots[10] = "Gun";
+        invStacks[10] = 1;
         invSlots[11] = "Flashlight";
+        invStacks[11] = 1;
     }
 
     // Update is called once per frame
@@ -104,8 +109,8 @@ public class Inventory : MonoBehaviour
             else
             {
                 imageIcons[i].SetActive(true);
-                imageIcons[i].GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Items/"+invSlots[i].ToString());
-                //print("Items/" + invSlots[i].ToString() + ".png");
+                imageIcons[i].GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Item Icons/"+invSlots[i].ToString());
+                
             }
         }
     }
