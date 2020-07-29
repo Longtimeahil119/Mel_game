@@ -7,7 +7,7 @@ public class HeldItem : MonoBehaviour
     private GameObject[] barIconsCopy = new GameObject[5];
 
     public GameObject[] heldItems;
-    private string selectedItem;
+    public static string selectedItem;
     
     private GameObject itemPre;
 
@@ -43,6 +43,7 @@ public class HeldItem : MonoBehaviour
         {
             selectedItem = "";
         }
+
 
         if (selectedItem.Equals("Gun"))
             heldItems[0].SetActive(true);
@@ -80,27 +81,52 @@ public class HeldItem : MonoBehaviour
 
     public static void pickUpItem(string item, GameObject obj)
     {
-
+        bool hasItem = false;
+        int index = 0;
+        int firstEmptyIndex = 0;
+        bool determinedStack = false;
+        bool determinedEmpty = false;
         // First we check to see if the picked up item already exists within the inventory
-        for(int i = 0; i < Inventory.invSlots.Length - 1; i++)
+        for(int i = 0; i < Inventory.invSlots.Length; i++)
         {
             if (Inventory.invSlots[i].Equals(item))
             {
                 // Stack the item
-                Inventory.invStacks[i] += 1;
-                print(i);
-                Destroy(obj);
-                
+                hasItem = true;
+                index = i;
+                determinedStack = true;
                 break;
             }
-            else if (Inventory.invSlots[i].Equals(""))
+            else if (Inventory.invSlots[i].Equals("") && !determinedEmpty)
             {
-                Inventory.invSlots[i] = item;
-                Destroy(obj);
-                Inventory.invStacks[i] += 1;
-                break;
+                firstEmptyIndex = i;
+                determinedEmpty = true;
             }
         }
 
+        // If it found somewhere to stack, index will stay the same
+        // If it found an empty slot and a stack was not found, index becomes firstEmptyIndex
+        if(determinedEmpty && determinedStack == false)
+        {
+            index = firstEmptyIndex;
+        }
+        else if (determinedEmpty == false && determinedStack == false)
+        {
+            print("INV FULL??");
+        }
+
+        if(hasItem)
+        {
+            Inventory.invStacks[index] += 1;
+            Destroy(obj);
+        }
+        else
+        {
+            Inventory.invSlots[index] = item;
+            Destroy(obj);
+            Inventory.invStacks[index] += 1;
+        }
+
     }
+
 }

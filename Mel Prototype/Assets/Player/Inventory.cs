@@ -87,6 +87,26 @@ public class Inventory : MonoBehaviour
 
         ShowAllItems();
 
+        for(int i = 0; i < imageIcons.Length; i++)
+        {
+            try
+            {
+                if (ActionBar.stackableItems.Contains(imageIcons[i].gameObject.transform.GetComponent<UnityEngine.UI.Image>().sprite.name))
+                {
+                    imageIcons[i].transform.Find("Stack").gameObject.SetActive(true);
+                    imageIcons[i].transform.Find("Stack").gameObject.GetComponent<UnityEngine.UI.Text>().text = invStacks[i].ToString();
+                }
+                else
+                {
+                    imageIcons[i].transform.Find("Stack").gameObject.SetActive(false);
+                }
+            }
+            catch
+            {
+
+            }
+            
+        }
 
     }
 

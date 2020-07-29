@@ -45,15 +45,23 @@ public class DragDrop : EventTrigger
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        if(Inventory.invSlots[collidedWith].Equals(""))
+
+        dragging = false;
+
+        if (Inventory.invSlots[collidedWith].Equals(""))
         {
             Inventory.invSlots[collidedWith] = Inventory.invSlots[grandParentSlot];
             Inventory.invSlots[grandParentSlot] = "";
             Inventory.invStacks[collidedWith] = Inventory.invStacks[grandParentSlot];
             Inventory.invStacks[grandParentSlot] = 0;
         }
+        else
+        {
+             
+        }
 
-        dragging = false;
+        // Fix visual bug here somewhere?
+        
     }
 
     private void OnTriggerEnter(Collider other)

@@ -17,11 +17,16 @@ public class ActionBar : MonoBehaviour
     public static Dictionary<string, GameObject[]> arrays;
 
     public static int slotSelected;
-    
+
+    public static List<string> stackableItems;
+
     // Start is called before the first frame update
     void Start()
     {
         slotSelected = 1;
+
+        stackableItems = new List<string>();
+        stackableItems.Add("Cube");
 
         arrays = new Dictionary<string, GameObject[]>
         {
@@ -52,7 +57,31 @@ public class ActionBar : MonoBehaviour
                 barIcons[i - (Inventory.invSlots.Length - 5)].GetComponent<UnityEngine.UI.Image>().sprite = Resources.Load<Sprite>("Item Icons/"+Inventory.invSlots[i].ToString());
             }
         }
+        
+        
+        // If the item is stackable, show how many is in the stack
+        for(int i = 0; i < barIcons.Length; i++)
+        {
+            if (stackableItems.Contains(getItem(i)))
+            {
+                barIcons[i].transform.Find("Stack").gameObject.SetActive(true);
+                barIcons[i].transform.Find("Stack").gameObject.GetComponent<Text>().text = Inventory.invStacks[(Inventory.invStacks.Length - 5) + (i)].ToString();
+            }
+            else
+                barIcons[i].transform.Find("Stack").gameObject.SetActive(false);
+        }
+    }
 
+    private string getItem(int index)
+    {
+        try
+        {
+            return barIcons[index].transform.gameObject.GetComponent<UnityEngine.UI.Image>().sprite.name;
+        }
+        catch
+        {
+            return "";
+        }
     }
 
     void SetActionInactive()
